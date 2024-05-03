@@ -1,0 +1,135 @@
+{
+  "packages": [
+    {
+      "name": "ch32-riscv-noneos",
+      "websiteURL": "https://www.wch.cn/",
+      "maintainer": "CH32 RISC-V UG",
+      "email": "tech@wch.cn",
+      "help": {
+        "online": "https://www.wch.cn/"
+      },
+      "platforms": [
+        {
+          "name": "CH32 RISC-V noneOS",
+          "architecture": "ch32riscv",
+          "version": "1.0.0",
+          "category": "Contributed",
+          "url": "https://codeload.github.com/ch32-riscv-ug/arduino_core_ch32_riscv_noneos/zip/refs/tags/1.0.0",
+          "archiveFileName": "arduino_core_ch32_riscv_noneos.1.0.0.zip",
+          "checksum": "SHA-256:249e1831749e53f8219e646cbcb3fadcfe9643704fb5b97b6f9dfdf443dd2ecc",
+          "size": "1021012",
+          "boards": [
+            {"name": "CH32X03x EVT Board"},
+            {"name": "CH32V30x EVT Board"},
+            {"name": "CH32V20x EVT Board"},
+            {"name": "CH32V10x EVT Board"},
+            {"name": "CH32V00x EVT Board"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "ch32-riscv-noneos",
+              "name": "riscv-none-embed-gcc",
+              "version": "8.2.0"
+            },
+            {
+              "packager": "ch32-riscv-noneos",
+              "name": "openocd",
+              "version": "1.0.0"
+            },
+            {
+              "packager": "ch32-riscv-noneos",
+              "name": "beforeinstall",
+              "version": "1.0.0"
+            }
+          ]
+        }
+      ],
+      "tools": [
+        {
+          "name": "riscv-none-embed-gcc",
+          "version": "8.2.0",
+          "systems":
+          [
+            {
+              "host": "i686-mingw32",
+              "url": "https://codeload.github.com/openwch/risc-none-embed-gcc/zip/refs/tags/8.2.0",
+              "archiveFileName": "risc-none-embed-gcc-8.2.0.zip",
+              "checksum": "SHA-256:43DF880A1908C873A8B6AB115568C6BEAEEC41DDADEB5202703B6AA9FDE50626",
+              "size": "267710516"
+            },
+            {
+              "host": "x86_64-linux-gnu",
+              "url": "https://codeload.github.com/TianpeiLee/wch_gcc_8_linux/tar.gz/refs/tags/8.2.0",
+              "archiveFileName": "wch_gcc_8_linux-8.2.0.tar.gz",
+              "checksum": "SHA-256:967FB021E5689FF79A06A71C7E54FB7FACE418D5E9B27EC64F5E56687557A282",
+              "size": "245443061"
+            },
+            {
+              "host": "x86_64-apple-darwin",
+              "url": "https://codeload.github.com/TianpeiLee/wch_gcc_macos/tar.gz/refs/tags/8.2.0",
+              "archiveFileName": "wch_gcc_macos-8.2.0.tar.gz",
+              "checksum": "SHA-256:E14538AE7B621DE798C2466B338A4174CCE22C9CF12E5C1684C0995931738260",
+              "size": "160591401"
+            }
+          ]
+        },
+        {
+          "name": "openocd",
+          "version": "1.0.0",
+          "systems":
+          [
+            {
+              "host": "i686-mingw32",
+              "url": "https://codeload.github.com/openwch/openocd_wch/zip/refs/tags/1.0.0",
+              "archiveFileName": "openocd_wch-1.0.0.zip",
+              "checksum": "SHA-256:F1E54FD7F253CF37E7F4581088FF62DFDFDAB899B9D3182C36426F6146AE0465",
+              "size": "9604774"
+            },
+            {
+              "host": "x86_64-linux-gnu",
+              "url": "https://codeload.github.com/TianpeiLee/wch_openocd_linux/tar.gz/refs/tags/1.0.0",
+              "archiveFileName": "wch_openocd_linux-1.0.0.tar.gz",
+              "checksum": "SHA-256:10FA9CF5006C3495AEDCAFD1C3903FA8D75D513536432E1D61B59124442EB4C3",
+              "size": "2097609"
+            },
+            {
+              "host": "x86_64-apple-darwin",
+              "url": "https://codeload.github.com/TianpeiLee/wch_openocd_macos/tar.gz/refs/tags/1.0.0",
+              "archiveFileName": "wch_openocd_macos-1.0.0.tar.gz",
+              "checksum": "SHA-256:100DC6A75E302D5E3FF7548FE64351AA545353982BA22C19D43555F3A748BE0E",
+              "size": "1995618"
+            }			
+          ]
+        },
+        {
+          "name": "beforeinstall",
+          "version": "1.0.0",
+          "systems":
+          [
+            {
+              "host": "i686-mingw32",
+              "url": "https://raw.githubusercontent.com/ch32-riscv-ug/arduino_core_ch32_riscv_noneos/main/wch_beforeinstall_win-1.0.0.zip",
+              "archiveFileName": "wch_beforeinstall_win-1.0.0.zip",
+              "checksum": "SHA-256:ef4167d6994f3b07730409074b2a597be7df6dfa659c9549fc0a94ca41f6250f",
+              "size": "172"
+            },
+            {
+              "host": "x86_64-linux-gnu",
+              "url": "https://codeload.github.com/TianpeiLee/wch_beforeinstall_linux/tar.gz/refs/tags/1.0.0",
+              "archiveFileName": "wch_beforeinstall_linux-1.0.0.tar.gz",
+              "checksum": "SHA-256:17EF3A94BC46B9EB9AB1FDECC48FCD3880EEB8FCC36E6648626320F0BF2864DC",
+              "size": "507269"
+            },
+            {
+              "host": "x86_64-apple-darwin",
+              "url": "https://codeload.github.com/TianpeiLee/wch_beforeinstall_linux/tar.gz/refs/tags/1.0.0",
+              "archiveFileName": "wch_beforeinstall_linux-1.0.0.tar.gz",
+              "checksum": "SHA-256:17EF3A94BC46B9EB9AB1FDECC48FCD3880EEB8FCC36E6648626320F0BF2864DC",
+              "size": "507269"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

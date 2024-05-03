@@ -1,0 +1,12 @@
+--- ch32v10x_misc.h.org	2024-05-03 18:01:26.351965502 +0900
++++ ch32v10x_misc.h	2024-05-03 18:02:05.854683905 +0900
+@@ -66,5 +66,9 @@
+ void NVIC_PriorityGroupConfig(uint32_t NVIC_PriorityGroup);
+ void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);
+ 
++#ifdef __cplusplus
++ }
++#endif
++
+ #endif /* __CH32V10x_MISC_H */
+ 
