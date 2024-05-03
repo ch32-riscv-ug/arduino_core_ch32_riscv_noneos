@@ -2,11 +2,11 @@
   "packages": [
     {
       "name": "ch32-riscv-noneos",
-      "websiteURL": "https://www.wch.cn/",
+      "websiteURL": "https://github.com/ch32-riscv-ug",
       "maintainer": "CH32 RISC-V UG",
-      "email": "tech@wch.cn",
+      "email": "tanakamasayuki@gmail.com",
       "help": {
-        "online": "https://www.wch.cn/"
+        "online": "https://github.com/ch32-riscv-ug"
       },
       "platforms": [
         {
@@ -14,7 +14,7 @@
           "architecture": "ch32riscv",
           "version": "1.0.0",
           "category": "Contributed",
-          "url": "https://codeload.github.com/ch32-riscv-ug/arduino_core_ch32_riscv_noneos/zip/refs/tags/1.0.0",
+          "url": "https://github.com/ch32-riscv-ug/arduino_core_ch32_riscv_noneos/releases/download/1.0.0/arduino_core_ch32_riscv_noneos.1.0.0.zip",
           "archiveFileName": "arduino_core_ch32_riscv_noneos.1.0.0.zip",
           "checksum": "SHA-256:d7971f4c1def4587b2c769146cd066ccdd0a11593794fd73f6564f8d6606df4f",
           "size": "1021012",
