@@ -2,13 +2,47 @@
   "packages": [
     {
       "name": "ch32-riscv-noneos",
-      "websiteURL": "https://github.com/ch32-riscv-ug",
+      "websiteURL": "https://github.com/ch32-riscv-ug/",
       "maintainer": "CH32 RISC-V UG",
       "email": "tanakamasayuki@gmail.com",
       "help": {
-        "online": "https://github.com/ch32-riscv-ug"
+        "online": "https://github.com/ch32-riscv-ug/"
       },
       "platforms": [
+        {
+          "name": "CH32 RISC-V noneOS",
+          "architecture": "ch32riscv",
+          "version": "1.0.1",
+          "category": "Contributed",
+          "url": "https://github.com/ch32-riscv-ug/arduino_core_ch32_riscv_noneos/releases/download/1.0.0/arduino_core_ch32_riscv_noneos.1.0.1.zip",
+          "archiveFileName": "arduino_core_ch32_riscv_noneos.1.0.1.zip",
+          "checksum": "SHA-256:2de6f39b48ab86a1a99b50cbfdbdc927aeef4d51f06eceed77c049636215b81c",
+          "size": "1022637",
+          "boards": [
+            {"name": "CH32X03x EVT Board"},
+            {"name": "CH32V30x EVT Board"},
+            {"name": "CH32V20x EVT Board"},
+            {"name": "CH32V10x EVT Board"},
+            {"name": "CH32V00x EVT Board"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "ch32-riscv-noneos",
+              "name": "riscv-none-embed-gcc",
+              "version": "8.2.0"
+            },
+            {
+              "packager": "ch32-riscv-noneos",
+              "name": "openocd",
+              "version": "1.0.0"
+            },
+            {
+              "packager": "ch32-riscv-noneos",
+              "name": "beforeinstall",
+              "version": "1.0.0"
+            }
+          ]
+        },
         {
           "name": "CH32 RISC-V noneOS",
           "architecture": "ch32riscv",
