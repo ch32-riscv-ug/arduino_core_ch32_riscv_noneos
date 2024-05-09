@@ -1,0 +1,20 @@
+--- ch32l103_adc.c.org	2024-05-07 09:43:48.000000000 +0900
++++ ch32l103_adc.c	2024-05-09 14:20:37.089840435 +0900
+@@ -1219,7 +1219,7 @@
+ 
+     *(vu32*)0x4002202C |= (1<<9);     //offset calibration
+     (*(vu32*)0x40022034) |= (1<<29);  //lock
+-    while((*(vu32*)0x40022034) & (1<<29) == 0); //wait lock
++    while(((*(vu32*)0x40022034) & (1<<29)) == 0); //wait lock
+ 
+     if(NewState != DISABLE)
+     {
+@@ -1298,7 +1298,7 @@
+  *
+  * @return  CalibrationValue
+  */
+-int16_t Get_CalibrationValue(ADC_TypeDef *ADCx)
++int16_t Get_CalibrationValue(__attribute__((unused)) ADC_TypeDef *ADCx)
+ {
+     __IO uint8_t  i, j;
+     uint16_t      buf[10];

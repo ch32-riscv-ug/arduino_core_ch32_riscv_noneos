@@ -1,0 +1,11 @@
+--- debug.c.org	2024-01-22 14:25:00.000000000 +0900
++++ debug.c	2024-05-09 12:27:46.729860998 +0900
+@@ -150,7 +150,7 @@
+  * @return  size: Data length
+  */
+ __attribute__((used))
+-int _write(int fd, char *buf, int size)
++int _write(__attribute__((unused)) int fd, char *buf, int size)
+ {
+     int i;
+ 

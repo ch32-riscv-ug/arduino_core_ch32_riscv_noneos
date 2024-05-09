@@ -1,0 +1,11 @@
+--- ch32l103_can.c.org	2024-01-19 16:51:12.000000000 +0900
++++ ch32l103_can.c	2024-05-09 14:23:22.524406170 +0900
+@@ -1441,7 +1441,7 @@
+                                      ((uint32_t)CANFD_InitStruct->CANFD_TDC0);
+ 
+         CANx->CANFD_BTR = (uint32_t)((uint32_t)CANFD_InitStruct->CANFD_TDCE << 23) | \
+-                                    ((uint32_t)CANFD_InitStruct->CANFD_Prescaler-1 << 16) | \
++                                    (((uint32_t)CANFD_InitStruct->CANFD_Prescaler-1) << 16) | \
+                                     ((uint32_t)CANFD_InitStruct->CANFD_BS1 << 8) | \
+                                     ((uint32_t)CANFD_InitStruct->CANFD_BS2 << 4) | \
+                                     ((uint32_t)CANFD_InitStruct->CANFD_SJW);

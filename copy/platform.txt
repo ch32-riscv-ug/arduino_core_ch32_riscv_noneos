@@ -14,12 +14,12 @@ compiler.ch.extra_include="-I{build.source.path}" "-I{build.core.path}" "-I{buil
 #---warning flags
 compiler.warning_flags=-Wunused -Wuninitialized
 compiler.warning_flags.none=-w
-compiler.warning_flags.default=
+compiler.warning_flags.default=-Wunused -Wuninitialized
 compiler.warning_flags.more=-Wall
 compiler.warning_flags.all=-Wall -Wextra
 
 #---compiler.cmd
-compiler.path={runtime.tools.riscv-none-embed-gcc-8.2.0.path}/bin/
+compiler.path={runtime.tools.riscv-none-embed-gcc.path}/bin/
 
 compiler.S.cmd=riscv-none-embed-gcc
 compiler.c.cmd=riscv-none-embed-gcc
@@ -36,7 +36,7 @@ compiler.libraries.ldflags=
 
 compiler.extra_flags=-march={build.march} -mabi={build.mabi} -msmall-data-limit=8 -msave-restore -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -fno-common 
 
-compiler.S.flags={compiler.extra_flags} -x assembler-with-cpp "-I{build.system.path}/{build.series}/SRC/Startup/" "-I{build.core.path}/ch32/"  "-I{build.core.path}/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RV32I_PFIC_no_extensions/"
+compiler.S.flags={compiler.extra_flags} -x assembler-with-cpp "-I{build.system.path}/{build.series}/SRC/Startup/" "-I{build.core.path}/ch32/" 
 
 compiler.c.flags={compiler.extra_flags} -c {build.flags.optimize} {build.flags.debug} {compiler.warning_flags} -std=gnu99 -MMD {compiler.ch.extra_include}
 
@@ -160,7 +160,7 @@ recipe.size.regex.data=^(?:\.data|\.bss|\.noinit)\s+([0-9]+).*
 
 # Uploader tool
 ## WCH-LinkE
-tools.WCH_linkE.path={runtime.tools.openocd-1.0.0.path}/bin/
+tools.WCH_linkE.path={runtime.tools.openocd.path}/bin/
 tools.WCH_linkE.cmd=openocd
 tools.WCH_linkE.upload.params.verbose=
 tools.WCH_linkE.upload.params.quiet=
@@ -180,6 +180,6 @@ debug.toolchain.prefix=riscv-none-embed
 debug.toolchain.path={compiler.path}
 
 debug.server=openocd
-debug.server.openocd.path={runtime.tools.openocd-1.0.0.path}/bin/openocd
+debug.server.openocd.path={runtime.tools.openocd.path}/bin/openocd
 debug.server.openocd.scripts_dir={debug.toolchain.path}/scripts
 debug.server.openocd.script={runtime.tools.openocd.path}/bin/wch-riscv.cfg
