@@ -14,7 +14,7 @@
                     "architecture": "ch32riscv",
                     "version": "1.0.2",
                     "category": "Contributed",
-                    "url": "https://github.com/ch32-riscv-ug/arduino_core_ch32_riscv_noneos/releases/download/1.0.1/arduino_core_ch32_riscv_noneos.1.0.2.zip",
+                    "url": "https://github.com/ch32-riscv-ug/arduino_core_ch32_riscv_noneos/releases/download/1.0.2/arduino_core_ch32_riscv_noneos.1.0.2.zip",
                     "archiveFileName": "arduino_core_ch32_riscv_noneos.1.0.2.zip",
                     "checksum": "SHA-256:74cefb0f5b0702894f35c6a42feeb05296e695849784e5089e92a0ed3c95d20b",
                     "size": 1151853,
