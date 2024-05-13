@@ -4,7 +4,7 @@ chdir(dirname(__FILE__));
 system('rm -rfv arduino*');
 
 $projects_name = 'arduino_core_ch32_riscv_noneos';
-$ver = '1.0.2';
+$ver = '1.1';
 
 mkdir($projects_name);
 chdir($projects_name);
@@ -92,6 +92,9 @@ foreach($patch_list as $patch){
 echo "################################################################\n";
 
 chdir(dirname(__FILE__));
+
+system('find ' . $projects_name . ' -name "*.patch" | xargs rm');
+
 system("zip -r $projects_name.$ver.zip $projects_name >zip.log");
 
 // JSON

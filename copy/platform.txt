@@ -9,7 +9,7 @@ version=1.0.0
 
 # Compile variables
 # ----------------------
-compiler.ch.extra_include="-I{build.source.path}" "-I{build.core.path}" "-I{build.core.path}/USER/" "-I{build.core.path}/SRC/Core/" "-I{build.core.path}/SRC/Debug/" "-I{build.core.path}/SRC/Startup/" "-I{build.core.path}/SRC/Peripheral/inc/"
+compiler.ch.extra_include="-I{build.source.path}" "-I{build.core.path}" "-I{build.core.path}/SRC/Debug/" "-I{build.core.path}/SRC/Core/" "-I{build.core.path}/USER/" "-I{build.core.path}/SRC/Peripheral/inc/"
 
 #---warning flags
 compiler.warning_flags=-Wunused -Wuninitialized
@@ -32,11 +32,9 @@ compiler.objdump.cmd=riscv-none-embed-objdump
 
 compiler.libraries.ldflags=
 
-#"@{build.opt.path}" {build.flags.optimize}  {compiler.warning_flags} {build.flags.debug} -MP -MF
+compiler.extra_flags=-march={build.march} -mabi={build.mabi} -msmall-data-limit={build.small-data-limit} -msave-restore -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -fno-common
 
-compiler.extra_flags=-march={build.march} -mabi={build.mabi} -msmall-data-limit=8 -msave-restore -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -fno-common 
-
-compiler.S.flags={compiler.extra_flags} -x assembler-with-cpp "-I{build.system.path}/{build.series}/SRC/Startup/" "-I{build.core.path}/ch32/" 
+compiler.S.flags={compiler.extra_flags} -x assembler-with-cpp "-I{build.system.path}/{build.core}/SRC/Startup/"
 
 compiler.c.flags={compiler.extra_flags} -c {build.flags.optimize} {build.flags.debug} {compiler.warning_flags} -std=gnu99 -MMD {compiler.ch.extra_include}
 
@@ -61,7 +59,6 @@ compiler.define=-DARDUINO=
 build.extra_flags=
 build.bootloader_flags=
 build.ldscript=Link.ld
-build.variant_h=
 
 # These can be overridden in platform.local.txt
 compiler.c.extra_flags=
@@ -75,8 +72,6 @@ compiler.elf2bin.extra_flags=
 compiler.elf2hex.extra_flags=
 compiler.elf2lst.extra_flags=
 
-#compiler.arm.cmsis.c.flags="-I{build.system.path}/{build.series}/SRC/Core/"  "-I{build.system.path}/{build.series}/SRC/Peripheral/inc/" "-I{build.system.path}/{build.series}/SRC/" "-I{build.system.path}/{build.series}/SRC/Startup/"  "-I{build.system.path}/{build.series}/SRC/Debug/" "-I{build.system.path}/{build.series}/USER/" "-I{build.variants.path}/{build.series}/" "-I{build.variants.path}/{build.series}/{build.board}/"    
-
 # USB Flags
 # ---------
 build.usb_flags=-DUSBCON {build.usb_speed} -DUSBD_VID={build.vid} -DUSBD_PID={build.pid} -DHAL_PCD_MODULE_ENABLED
@@ -87,9 +82,9 @@ build.usb_flags=-DUSBCON {build.usb_speed} -DUSBD_VID={build.vid} -DUSBD_PID={bu
 build.vid=0
 build.pid=0
 
-# Build information's     
-#####################-D{build.board} -DARDUINO_ARCH_{build.arch} -DBOARD_NAME="{build.board}" -DVARIANT_H="{build.variant_h}"
-build.info.flags=-D{build.series} -DARDUINO={runtime.ide.version} -D{build.chip} -DVARIANT_H="{build.variant_h}"
+# Build information's
+#####################
+build.info.flags=-D{build.core} -DARDUINO={runtime.ide.version}
 
 # Defaults config
 build.xSerial=
@@ -118,10 +113,10 @@ build.flash_offset=0
 # ---------------------
 
 ## Compile c files
-recipe.c.o.pattern="{compiler.path}{compiler.c.cmd}" {compiler.c.flags} {build.info.flags} {compiler.c.extra_flags} {build.extra_flags} {includes}  -o "{object_file}" -c "{source_file}"  
+recipe.c.o.pattern="{compiler.path}{compiler.c.cmd}" {compiler.c.flags} {build.info.flags} {compiler.c.extra_flags} {build.extra_flags} {includes}  -o "{object_file}" -c "{source_file}"
 
 ## Compile c++ files
-recipe.cpp.o.pattern="{compiler.path}{compiler.cpp.cmd}" {compiler.cpp.flags} {build.info.flags} {compiler.cpp.extra_flags} {build.extra_flags} {includes} -o "{object_file}" -c "{source_file}"  
+recipe.cpp.o.pattern="{compiler.path}{compiler.cpp.cmd}" {compiler.cpp.flags} {build.info.flags} {compiler.cpp.extra_flags} {build.extra_flags} {includes} -o "{object_file}" -c "{source_file}"
 
 ## Compile S files
 recipe.S.o.pattern="{compiler.path}{compiler.S.cmd}" {compiler.S.flags} {build.info.flags} -o "{object_file}" -c "{source_file}"
@@ -130,7 +125,7 @@ recipe.S.o.pattern="{compiler.path}{compiler.S.cmd}" {compiler.S.flags} {build.i
 recipe.ar.pattern="{compiler.path}{compiler.ar.cmd}" {compiler.ar.flags} {compiler.ar.extra_flags} "{archive_file_path}" "{object_file}"
 
 ## Combine gc-sections, archives, and objects
-recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}" {compiler.extra_flags} -T "{build.core.path}/SRC/Ld/{build.ldscript}" -nostartfiles -Xlinker --gc-sections "-Wl,-Map,{build.path}/{build.project_name}.map" {compiler.c.elf.extra_flags} {build.flags.ldflags} -o "{build.path}/{build.project_name}.elf" "-L{build.path}" -Wl,--start-group {object_files} {build.ch_extra_lib} -Wl,--whole-archive "{archive_file_path}" -Wl,--no-whole-archive -lc -Wl,--end-group 
+recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}" {compiler.extra_flags} -T "{build.core.path}/SRC/Ld/{build.ldscript}" -nostartfiles -Xlinker --gc-sections "-Wl,-Map,{build.path}/{build.project_name}.map" {compiler.c.elf.extra_flags} {build.flags.ldflags} -o "{build.path}/{build.project_name}.elf" "-L{build.path}" -Wl,--start-group {object_files} {build.ch_extra_lib} -Wl,--whole-archive "{archive_file_path}" -Wl,--no-whole-archive -lc -Wl,--end-group {build.flags.libm}
 
 ## Create output (.bin file)
 recipe.objcopy.bin.pattern="{compiler.path}{compiler.objcopy.cmd}" {compiler.elf2bin.flags} {compiler.elf2bin.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.bin"
@@ -146,7 +141,7 @@ build.preferred_out_format=bin
 
 ## Save binary
 recipe.output.tmp_file={build.project_name}.{build.preferred_out_format}
-recipe.output.save_file={build.project_name}.{build.board}.{build.preferred_out_format}
+recipe.output.save_file={build.project_name}.{build.core}.{build.preferred_out_format}
 
 ## Compute size recipe.advanced_size.pattern
 recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A "{build.path}/{build.project_name}.elf"
