@@ -201,22 +201,29 @@
                             "host": "i686-mingw32",
                             "url": "https://github.com/ch32-riscv-ug/MounRiver_Studio_Community_miror/releases/download/1.91-toolchain/riscv-none-embed-gcc-8-win-1.91.zip",
                             "archiveFileName": "riscv-none-embed-gcc-8-win-1.91.zip",
-                            "checksum": "SHA-256:b3d6b85a54d85819e0a6c999ccfaff85238858133d900e4de0b10cf4c63935af",
-                            "size": "245111177"
+                            "checksum": "SHA-256:4d84c51cfd11ff570d73a5efeee1ed72e5ea1525fe445759fc7f80c3f60e0c5c",
+                            "size": "244859102"
                         },
                         {
                             "host": "x86_64-linux-gnu",
                             "url": "https://github.com/ch32-riscv-ug/MounRiver_Studio_Community_miror/releases/download/1.91-toolchain/riscv-none-embed-gcc-8-linux-1.91.zip",
                             "archiveFileName": "riscv-none-embed-gcc-8-linux-1.91.zip",
-                            "checksum": "SHA-256:45e53264c7f2e27de8876b8e500da2a95e5976efe7d0c1d51ef3bc7c03293ca7",
+                            "checksum": "SHA-256:a8d24953b5194146409be434e4fb2bb33fc4648f7e556154bd4a5489ebaeca64",
                             "size": "253087380"
                         },
                         {
                             "host": "x86_64-apple-darwin",
                             "url": "https://github.com/ch32-riscv-ug/MounRiver_Studio_Community_miror/releases/download/1.91-toolchain/riscv-none-embed-gcc-8-mac-1.91.zip",
                             "archiveFileName": "riscv-none-embed-gcc-8-mac-1.91.zip",
-                            "checksum": "SHA-256:f274b8afe5307f38541548b8534946d3cdffeaeec33d5c599f461a4021aa60d3",
-                            "size": "165175099"
+                            "checksum": "SHA-256:6372fa1b38a8b88d0702fdb5838d61c25debef42ba83a7e79185c336a7d929aa",
+                            "size": "165225725"
+                        },
+                        {
+                            "host": "arm64-apple-darwin",
+                            "url": "https://github.com/ch32-riscv-ug/MounRiver_Studio_Community_miror/releases/download/1.91-toolchain/riscv-none-embed-gcc-8-mac-1.91.zip",
+                            "archiveFileName": "riscv-none-embed-gcc-8-mac-1.91.zip",
+                            "checksum": "SHA-256:6372fa1b38a8b88d0702fdb5838d61c25debef42ba83a7e79185c336a7d929aa",
+                            "size": "165225725"
                         }
                     ]
                 },
@@ -228,22 +235,29 @@
                             "host": "i686-mingw32",
                             "url": "https://github.com/ch32-riscv-ug/MounRiver_Studio_Community_miror/releases/download/1.91-toolchain/openocd-win-1.91.zip",
                             "archiveFileName": "openocd-win-1.91.zip",
-                            "checksum": "SHA-256:c3bbe19235b983100f59c6b2a134bb763b610dcfea4f909d4223d5b0164e3721",
-                            "size": "11508981"
+                            "checksum": "SHA-256:32f8e85d11d2c4e1c88cd7f5fe022e0e37b290fcca1f63e7658022c84f705b40",
+                            "size": "11605724"
                         },
                         {
                             "host": "x86_64-linux-gnu",
                             "url": "https://github.com/ch32-riscv-ug/MounRiver_Studio_Community_miror/releases/download/1.91-toolchain/openocd-linux-1.91.zip",
                             "archiveFileName": "openocd-linux-1.91.zip",
-                            "checksum": "SHA-256:6979c543763143be587b46549f96999b14aa8be36404ad0899d2b50cd62aae0f",
+                            "checksum": "SHA-256:f930c2c4576282bbd0e80904e3fb1fb891f1f70982f790fc48703dd9fd4828e9",
                             "size": "2497193"
                         },
                         {
                             "host": "x86_64-apple-darwin",
                             "url": "https://github.com/ch32-riscv-ug/MounRiver_Studio_Community_miror/releases/download/1.91-toolchain/openocd-mac-arm64-1.91.zip",
+                            "archiveFileName": "openocd-mac-x86_64-1.91.zip",
+                            "checksum": "SHA-256:d44bbdb8416c50f3c67651bdff914a0fc9d87ea74fa22cd80a5f368ff5dc0969",
+                            "size": "2408028"
+                        },
+                        {
+                            "host": "arm64-apple-darwin",
+                            "url": "https://github.com/ch32-riscv-ug/MounRiver_Studio_Community_miror/releases/download/1.91-toolchain/openocd-mac-arm64-1.91.zip",
                             "archiveFileName": "openocd-mac-arm64-1.91.zip",
-                            "checksum": "SHA-256:402a5199fd4939f63ff4bcc698295f400ccb8e1142968aea4b98959f8f4b67cf",
-                            "size": "2350445"
+                            "checksum": "SHA-256:c4db99dab36af4e8bc0bbbcc50627c24f52cda3c6dec87befe7ff3aa0e7ca2c0",
+                            "size": "2375737"
                         }
                     ]
                 },
@@ -255,22 +269,29 @@
                             "host": "i686-mingw32",
                             "url": "https://github.com/ch32-riscv-ug/MounRiver_Studio_Community_miror/releases/download/1.91-toolchain/beforeinstall-win-1.91.zip",
                             "archiveFileName": "beforeinstall-win-1.91.zip",
-                            "checksum": "SHA-256:d3a5bcc9823a0d431b5881aa988b12a2aa7af3a9d2c613459ae3765b00682251",
-                            "size": "284"
+                            "checksum": "SHA-256:4e7336d84e9cee3e191d9fac3e37dc9d1a495f1c7b589446df2410a8c9df66b9",
+                            "size": "388"
                         },
                         {
                             "host": "x86_64-linux-gnu",
                             "url": "https://github.com/ch32-riscv-ug/MounRiver_Studio_Community_miror/releases/download/1.91-toolchain/beforeinstall-linux-1.91.zip",
                             "archiveFileName": "beforeinstall-linux-1.91.zip",
-                            "checksum": "SHA-256:12258d52dc8e715a8be5c038621417bdd020bd68ef00298eb2daa4af4f0ddb73",
-                            "size": "1300776"
+                            "checksum": "SHA-256:5458738f1f4bc13c8fe5bb235a44434034c166d96d85f1ea78e9bf99ac672945",
+                            "size": "1300790"
                         },
                         {
                             "host": "x86_64-apple-darwin",
                             "url": "https://github.com/ch32-riscv-ug/MounRiver_Studio_Community_miror/releases/download/1.91-toolchain/beforeinstall-mac-1.91.zip",
                             "archiveFileName": "beforeinstall-mac-1.91.zip",
-                            "checksum": "SHA-256:2bdb487bcf97622c50321f69f44445bf1ec18831b9a6678e9187071f9fcdc910",
-                            "size": "284"
+                            "checksum": "SHA-256:a3e0bbc1097e28dd9c23d6ec5c8f5cde3b11f4078c26fcafa36cab951f778cb1",
+                            "size": "388"
+                        },
+                        {
+                            "host": "arm64-apple-darwin",
+                            "url": "https://github.com/ch32-riscv-ug/MounRiver_Studio_Community_miror/releases/download/1.91-toolchain/beforeinstall-mac-1.91.zip",
+                            "archiveFileName": "beforeinstall-mac-1.91.zip",
+                            "checksum": "SHA-256:a3e0bbc1097e28dd9c23d6ec5c8f5cde3b11f4078c26fcafa36cab951f778cb1",
+                            "size": "388"
                         }
                     ]
                 }
