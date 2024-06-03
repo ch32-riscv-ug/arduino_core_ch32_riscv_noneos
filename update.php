@@ -4,7 +4,7 @@ chdir(dirname(__FILE__));
 system('rm -rfv arduino*');
 
 $projects_name = 'arduino_core_ch32_riscv_noneos';
-$ver = '1.1';
+$ver = '1.2';
 
 mkdir($projects_name);
 chdir($projects_name);

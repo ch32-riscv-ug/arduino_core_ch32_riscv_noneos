@@ -1,0 +1,13 @@
+--- startup_ch32v20x_D8W.inc.org	2024-01-31 10:29:50.000000000 +0900
++++ startup_ch32v20x_D8W.inc	2024-06-03 13:06:35.220813170 +0900
+@@ -267,6 +267,10 @@ handle_reset:
+     ori t0, t0, 3           
+ 	csrw mtvec, t0
+ 
++    la a0, __libc_fini_array
++    call atexit
++    call __libc_init_array
++
+     jal  SystemInit
+ 	la t0, main
+ 	csrw mepc, t0

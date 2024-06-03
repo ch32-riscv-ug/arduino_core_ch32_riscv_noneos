@@ -1,0 +1,13 @@
+--- startup_ch32x035.inc.org	2023-12-27 13:59:00.000000000 +0900
++++ startup_ch32x035.inc	2024-06-03 13:10:20.325788053 +0900
+@@ -219,6 +219,10 @@ handle_reset:
+     ori t0, t0, 3           
+ 	csrw mtvec, t0
+ 
++    la a0, __libc_fini_array
++    call atexit
++    call __libc_init_array
++
+     jal  SystemInit
+ 	la t0, main
+ 	csrw mepc, t0

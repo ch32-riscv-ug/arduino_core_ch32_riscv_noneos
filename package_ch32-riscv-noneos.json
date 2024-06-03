@@ -12,6 +12,53 @@
                 {
                     "name": "CH32 RISC-V noneOS",
                     "architecture": "ch32riscv",
+                    "version": "1.2",
+                    "category": "Contributed",
+                    "url": "https://github.com/ch32-riscv-ug/arduino_core_ch32_riscv_noneos/releases/download/1.2/arduino_core_ch32_riscv_noneos.1.2.zip",
+                    "archiveFileName": "arduino_core_ch32_riscv_noneos.1.2.zip",
+                    "checksum": "SHA-256:018709f5e4f98b0bd00ca2f834d4576825b4c66d05ad36568cce31c58c8e3a21",
+                    "size": 1146008,
+                    "boards": [
+                        {
+                            "name": "CH32L103"
+                        },
+                        {
+                            "name": "CH32X035"
+                        },
+                        {
+                            "name": "CH32V30x"
+                        },
+                        {
+                            "name": "CH32V20x"
+                        },
+                        {
+                            "name": "CH32V103"
+                        },
+                        {
+                            "name": "CH32V003"
+                        }
+                    ],
+                    "toolsDependencies": [
+                        {
+                            "packager": "ch32-riscv-noneos",
+                            "name": "riscv-none-embed-gcc-8",
+                            "version": "1.91"
+                        },
+                        {
+                            "packager": "ch32-riscv-noneos",
+                            "name": "openocd",
+                            "version": "1.91"
+                        },
+                        {
+                            "packager": "ch32-riscv-noneos",
+                            "name": "beforeinstall",
+                            "version": "1.91"
+                        }
+                    ]
+                },
+                {
+                    "name": "CH32 RISC-V noneOS",
+                    "architecture": "ch32riscv",
                     "version": "1.1",
                     "category": "Contributed",
                     "url": "https://github.com/ch32-riscv-ug/arduino_core_ch32_riscv_noneos/releases/download/1.1/arduino_core_ch32_riscv_noneos.1.1.zip",
@@ -41,7 +88,7 @@
                     "toolsDependencies": [
                         {
                             "packager": "ch32-riscv-noneos",
-                            "name": "riscv-none-embed-gcc",
+                            "name": "riscv-none-embed-gcc-8",
                             "version": "1.91"
                         },
                         {
@@ -88,7 +135,7 @@
                     "toolsDependencies": [
                         {
                             "packager": "ch32-riscv-noneos",
-                            "name": "riscv-none-embed-gcc",
+                            "name": "riscv-none-embed-gcc-8",
                             "version": "1.91"
                         },
                         {
@@ -132,7 +179,7 @@
                     "toolsDependencies": [
                         {
                             "packager": "ch32-riscv-noneos",
-                            "name": "riscv-none-embed-gcc",
+                            "name": "riscv-none-embed-gcc-8",
                             "version": "1.91"
                         },
                         {
@@ -175,17 +222,17 @@
                     ],
                     "toolsDependencies": [
                         {
-                            "packager": "ch32-riscv-noneos",
-                            "name": "riscv-none-embed-gcc",
+                            "packager": "ch32-riscv-noneos-dev",
+                            "name": "riscv-none-embed-gcc-8",
                             "version": "1.91"
                         },
                         {
-                            "packager": "ch32-riscv-noneos",
+                            "packager": "ch32-riscv-noneos-dev",
                             "name": "openocd",
                             "version": "1.91"
                         },
                         {
-                            "packager": "ch32-riscv-noneos",
+                            "packager": "ch32-riscv-noneos-dev",
                             "name": "beforeinstall",
                             "version": "1.91"
                         }
@@ -194,7 +241,7 @@
             ],
             "tools": [
                 {
-                    "name": "riscv-none-embed-gcc",
+                    "name": "riscv-none-embed-gcc-8",
                     "version": "1.91",
                     "systems": [
                         {
@@ -224,6 +271,40 @@
                             "archiveFileName": "riscv-none-embed-gcc-8-mac-1.91.zip",
                             "checksum": "SHA-256:6372fa1b38a8b88d0702fdb5838d61c25debef42ba83a7e79185c336a7d929aa",
                             "size": "165225725"
+                        }
+                    ]
+                },
+                {
+                    "name": "riscv-none-elf-gcc-12",
+                    "version": "1.91",
+                    "systems": [
+                        {
+                            "host": "i686-mingw32",
+                            "url": "https://github.com/ch32-riscv-ug/MounRiver_Studio_Community_miror/releases/download/1.91-toolchain/riscv-none-elf-gcc-12-win-1.91.zip",
+                            "archiveFileName": "riscv-none-elf-gcc-12-win-1.91.zip",
+                            "checksum": "SHA-256:f3f5d5cd9b5985a10159e543f04e32dffa63c6282f45797d3b063656b49dfc02",
+                            "size": "380891911"
+                        },
+                        {
+                            "host": "x86_64-linux-gnu",
+                            "url": "https://github.com/ch32-riscv-ug/MounRiver_Studio_Community_miror/releases/download/1.91-toolchain/riscv-none-elf-gcc-12-linux-1.91.zip",
+                            "archiveFileName": "riscv-none-elf-gcc-12-linux-1.91.zip",
+                            "checksum": "SHA-256:3e2f579413a69318427421ec5a57dec060600417593bb8916bc40584e8e83c74",
+                            "size": "380329624"
+                        },
+                        {
+                            "host": "x86_64-apple-darwin",
+                            "url": "https://github.com/ch32-riscv-ug/MounRiver_Studio_Community_miror/releases/download/1.91-toolchain/riscv-none-elf-gcc-12-mac-1.91.zip",
+                            "archiveFileName": "riscv-none-elf-gcc-12-mac-1.91.zip",
+                            "checksum": "SHA-256:85e6db98c4b7134686e1211a1f8d52975baa021c301145b5b52d37fad9509a4b",
+                            "size": "353342911"
+                        },
+                        {
+                            "host": "arm64-apple-darwin",
+                            "url": "https://github.com/ch32-riscv-ug/MounRiver_Studio_Community_miror/releases/download/1.91-toolchain/riscv-none-elf-gcc-12-mac-1.91.zip",
+                            "archiveFileName": "riscv-none-elf-gcc-12-mac-1.91.zip",
+                            "checksum": "SHA-256:85e6db98c4b7134686e1211a1f8d52975baa021c301145b5b52d37fad9509a4b",
+                            "size": "353342911"
                         }
                     ]
                 },
