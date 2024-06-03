@@ -222,17 +222,17 @@
                     ],
                     "toolsDependencies": [
                         {
-                            "packager": "ch32-riscv-noneos-dev",
+                            "packager": "ch32-riscv-noneos",
                             "name": "riscv-none-embed-gcc-8",
                             "version": "1.91"
                         },
                         {
-                            "packager": "ch32-riscv-noneos-dev",
+                            "packager": "ch32-riscv-noneos",
                             "name": "openocd",
                             "version": "1.91"
                         },
                         {
-                            "packager": "ch32-riscv-noneos-dev",
+                            "packager": "ch32-riscv-noneos",
                             "name": "beforeinstall",
                             "version": "1.91"
                         }
