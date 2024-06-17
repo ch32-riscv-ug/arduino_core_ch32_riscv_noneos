@@ -5,6 +5,7 @@ void c_main( void )
 {
 }
 
+int main(void) __attribute__(( weak ));
 int main(void)
 {
     c_main();

@@ -1,0 +1,13 @@
+--- ch32v30x_it.c.org	2024-03-05 17:26:00.000000000 +0900
++++ ch32v30x_it.c	2024-06-17 14:53:23.970603956 +0900
+@@ -11,8 +11,8 @@
+ *******************************************************************************/
+ #include "ch32v30x_it.h"
+ 
+-void NMI_Handler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
+-void HardFault_Handler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
++void NMI_Handler(void) __attribute__((interrupt("WCH-Interrupt-fast"))) __attribute__(( weak ));
++void HardFault_Handler(void) __attribute__((interrupt("WCH-Interrupt-fast"))) __attribute__(( weak ));
+ 
+ /*********************************************************************
+  * @fn      NMI_Handler

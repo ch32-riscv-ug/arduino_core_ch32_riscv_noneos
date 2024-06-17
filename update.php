@@ -4,7 +4,7 @@ chdir(dirname(__FILE__));
 system('rm -rfv arduino*');
 
 $projects_name = 'arduino_core_ch32_riscv_noneos';
-$ver = '1.2';
+$ver = '1.3';
 
 mkdir($projects_name);
 chdir($projects_name);
@@ -51,6 +51,18 @@ foreach($dirlist as $path){
     $cmd = "cp -rfvp ../../common/* $dir/";
     echo("exec $cmd\n");
     system($cmd);
+
+    // update *_conf.h
+    $conflist = glob("$dir/USER/*_conf.h");
+    echo "Update " . $conflist[0] . "\n";
+    $plist = glob("$dir/SRC/Peripheral/inc/ch32*_*.h");
+    $incstr = '#include "debug.h"' . "\n";
+    foreach($plist as $item){
+        $incstr .= '#include "'.basename($item).'"'."\n";
+    }
+    $conf_file = file_get_contents($conflist[0]);
+    $conf_file = preg_replace("/#include.*#endif/s", $incstr . "\n#endif", $conf_file);
+    file_put_contents($conflist[0], $conf_file);
 }
 
 // ch base
@@ -90,10 +102,62 @@ foreach($patch_list as $patch){
     system("patch < " . $patch['file']);
 }
 echo "################################################################\n";
+echo "# patch delete\n";
 
 chdir(dirname(__FILE__));
 
 system('find ' . $projects_name . ' -name "*.patch" | xargs rm');
+
+echo "################################################################\n";
+echo "# EVT examples\n";
+
+$dir = './EVT';
+$pattern = '|\/User\/|';
+
+$it = new RecursiveDirectoryIterator($dir);
+$it = new RecursiveIteratorIterator(
+    $it,
+    RecursiveIteratorIterator::LEAVES_ONLY
+);
+$it = new RegexIterator($it, $pattern);
+foreach ($it as $file) {
+    $filename = $file->getFilename();
+    if($filename=='.'){
+        continue;
+    }
+    if($filename=='..'){
+        continue;
+    }
+    if(preg_match('/^ch32[0-9vxlX]{4}_conf/', $filename)){
+        continue;
+    }
+    if(preg_match('/^system_ch32[0-9vxlX]{4}/', $filename)){
+        continue;
+    }
+    if(preg_match('/EVT\/EXAM\/[^\/]*OS/', $file)){
+        echo "skip $file\n";
+        continue;
+    }
+    if(preg_match('/EVT\/EXAM\/RT-Thread/', $file)){
+        echo "skip $file\n";
+        continue;
+    }
+
+    preg_match('/EVT\/([^\/]*)/', $file->getPath(), $m);
+    $board = $m[1];
+
+    preg_match('/EVT\/EXAM\/(.*)\/User/', $file->getPath(), $m);
+    $path = $m[1];
+
+    $dir = $projects_name . "/libraries/EVT/examples/" . $board . "/" . $path;
+    @mkdir($dir, 0755, true);
+    if(basename($filename)=="main.c"){
+        file_put_contents($dir . "/" . basename($dir).".ino", "// look main.c\nvoid setup(){}\nvoid loop(){}\n");
+    }
+    copy($file, $dir . "/" . basename($filename));
+}
+
+echo "################################################################\n";
 
 system("zip -r $projects_name.$ver.zip $projects_name >zip.log");
 
