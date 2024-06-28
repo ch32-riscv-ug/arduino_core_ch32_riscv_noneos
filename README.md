@@ -18,6 +18,10 @@ It is based on openwch's Arduino Core.
 However, it does not include the Arduino Core API. pinMode() and digitalWrite() do not work.
 The EVT sample code has been adjusted to work.
 
+- https://github.com/ch32-riscv-ug/arduino_core_ch32_riscv_arduino
+
+We are also working on creating one that is compatible with the Arduino Core API.
+
 ## sample code
 ```c
 void GPIO_Toggle_INIT(void) {
@@ -133,7 +137,7 @@ void c_main( void )
 {
 }
 
-int main(void)
+int main(void) __attribute__(( weak ));
 {
     c_main();
 
