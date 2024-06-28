@@ -1,0 +1,11 @@
+--- ch32v00X_adc.c.org	2024-05-06 15:50:04.000000000 +0900
++++ ch32v00X_adc.c	2024-06-19 16:15:20.662830603 +0900
+@@ -110,7 +110,7 @@
+  *
+  * @return  none
+  */
+-void ADC_DeInit(ADC_TypeDef *ADCx)
++void ADC_DeInit(__attribute__((unused)) ADC_TypeDef *ADCx)
+ {
+     RCC_PB2PeriphResetCmd(RCC_PB2Periph_ADC1, ENABLE);
+     RCC_PB2PeriphResetCmd(RCC_PB2Periph_ADC1, DISABLE);

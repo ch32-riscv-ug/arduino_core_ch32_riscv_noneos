@@ -12,6 +12,53 @@
                 {
                     "name": "CH32 RISC-V noneOS",
                     "architecture": "ch32riscv",
+                    "version": "1.4",
+                    "category": "Contributed",
+                    "url": "https://github.com/ch32-riscv-ug/arduino_core_ch32_riscv_noneos/releases/download/1.4/arduino_core_ch32_riscv_noneos.1.4.zip",
+                    "archiveFileName": "arduino_core_ch32_riscv_noneos.1.4.zip",
+                    "checksum": "SHA-256:74c27b54adf484020129299bb2f8dee411d1126e230eaf815a107b108545e87d",
+                    "size": 5741571,
+                    "boards": [
+                        {
+                            "name": "CH32L103"
+                        },
+                        {
+                            "name": "CH32X035"
+                        },
+                        {
+                            "name": "CH32V30x"
+                        },
+                        {
+                            "name": "CH32V20x"
+                        },
+                        {
+                            "name": "CH32V103"
+                        },
+                        {
+                            "name": "CH32V003"
+                        }
+                    ],
+                    "toolsDependencies": [
+                        {
+                            "packager": "ch32-riscv-noneos",
+                            "name": "riscv-none-embed-gcc-8",
+                            "version": "1.91"
+                        },
+                        {
+                            "packager": "ch32-riscv-noneos",
+                            "name": "openocd",
+                            "version": "1.91"
+                        },
+                        {
+                            "packager": "ch32-riscv-noneos",
+                            "name": "beforeinstall",
+                            "version": "1.91"
+                        }
+                    ]
+                },
+                {
+                    "name": "CH32 RISC-V noneOS",
+                    "architecture": "ch32riscv",
                     "version": "1.3",
                     "category": "Contributed",
                     "url": "https://github.com/ch32-riscv-ug/arduino_core_ch32_riscv_noneos/releases/download/1.3/arduino_core_ch32_riscv_noneos.1.3.zip",

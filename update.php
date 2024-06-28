@@ -4,7 +4,7 @@ chdir(dirname(__FILE__));
 system('rm -rfv arduino*');
 
 $projects_name = 'arduino_core_ch32_riscv_noneos';
-$ver = '1.3';
+$ver = '1.4';
 
 mkdir($projects_name);
 chdir($projects_name);
@@ -98,7 +98,7 @@ foreach($patch_list as $patch){
     chdir(dirname(__FILE__));
     chdir($projects_name);
     chdir($patch['path']);
-    echo $patch['path'] . $patch['file'] . "\n";
+    echo $patch['path'] . "/" . $patch['file'] . "\n";
     system("patch < " . $patch['file']);
 }
 echo "################################################################\n";
