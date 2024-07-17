@@ -424,15 +424,15 @@
                             "host": "x86_64-apple-darwin",
                             "url": "https://github.com/ch32-riscv-ug/MounRiver_Studio_Community_miror/releases/download/1.91-toolchain/openocd-mac-arm64-1.91.zip",
                             "archiveFileName": "openocd-mac-x86_64-1.91.zip",
-                            "checksum": "SHA-256:d44bbdb8416c50f3c67651bdff914a0fc9d87ea74fa22cd80a5f368ff5dc0969",
-                            "size": "2408028"
+                            "checksum": "SHA-256:2bb3b7b59650a0ae243d4f9481a9a765b19666c36dc3c912540cb87e04c68eb4",
+                            "size": "2380678"
                         },
                         {
                             "host": "arm64-apple-darwin",
                             "url": "https://github.com/ch32-riscv-ug/MounRiver_Studio_Community_miror/releases/download/1.91-toolchain/openocd-mac-arm64-1.91.zip",
                             "archiveFileName": "openocd-mac-arm64-1.91.zip",
-                            "checksum": "SHA-256:c4db99dab36af4e8bc0bbbcc50627c24f52cda3c6dec87befe7ff3aa0e7ca2c0",
-                            "size": "2375737"
+                            "checksum": "SHA-256:85cb7b272173fbda5e07bf039c168b54e5010855cba73c9ee44c6ded29db240a",
+                            "size": "2350445"
                         }
                     ]
                 },
