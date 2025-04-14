@@ -1,15 +1,15 @@
 rm -rfv CH32*
 
-#wget https://www.wch.cn/downloads/file/299.html -O CH32F103EVT.ZIP
-#wget https://www.wch.cn/downloads/file/364.html -O CH32F20xEVT.ZIP
+#wget https://www.wch.cn/download/file?id=299 -O CH32F103EVT.ZIP
+#wget https://www.wch.cn/download/file?id=364 -O CH32F20xEVT.ZIP
 
-wget --continue https://www.wch.cn/downloads/file/409.html -O CH32V003EVT.ZIP
-wget --continue https://www.wch.cn/downloads/file/477.html -O CH32V006EVT.ZIP
-wget --continue https://www.wch.cn/downloads/file/326.html -O CH32V103EVT.ZIP
-wget --continue https://www.wch.cn/downloads/file/385.html -O CH32V20xEVT.ZIP
-wget --continue https://www.wch.cn/downloads/file/356.html -O CH32V307EVT.ZIP
-wget --continue https://www.wch.cn/downloads/file/444.html -O CH32X035EVT.ZIP
-wget --continue https://www.wch.cn/downloads/file/455.html -O CH32L103EVT.ZIP
+wget --continue https://www.wch.cn/download/file?id=409 -O CH32V003EVT.ZIP
+wget --continue https://www.wch.cn/download/file?id=477 -O CH32V006EVT.ZIP
+wget --continue https://www.wch.cn/download/file?id=326 -O CH32V103EVT.ZIP
+wget --continue https://www.wch.cn/download/file?id=385 -O CH32V20xEVT.ZIP
+wget --continue https://www.wch.cn/download/file?id=356 -O CH32V307EVT.ZIP
+wget --continue https://www.wch.cn/download/file?id=444 -O CH32X035EVT.ZIP
+wget --continue https://www.wch.cn/download/file?id=455 -O CH32L103EVT.ZIP
 
 rm -rfv */
 
